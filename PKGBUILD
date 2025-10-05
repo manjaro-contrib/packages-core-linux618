@@ -47,7 +47,6 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.
         # https://www.phoronix.com/news/AMD-Color-Management-Patches
         0000-amd-display-move-AMD_PRIVATE_COLOR-to-Kconfig.patch
         # From Valve for Upstream (fixes suspend on deck target in inputplumber)
-        0000-usb-vhci-hcd-Prevent-suspending.patch
         0000-usb-vhci-hcd-Unconditionally-allow-system-suspend.patch
         # ARCH Patches
         0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
@@ -106,7 +105,6 @@ sha256sums=('9a0ce70b0107881a44fcf465716a7d339a48a9e8a9c869b8dcd815bd3744abd5'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'
-            '6a18aaa9ee8fc38a2ea8ea3f8d93d01a5a219ac76c8217f7c0b2b9276c1057d7'
             '512032c6b93fce24254da6cace7bf101c8f7c824761a0f99deed4b7724ac6f3e'
             'e5e98d62b63704cecdf32dbe6a9bafea6e70b23fa8e01fe96ca220ac6036392e'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'

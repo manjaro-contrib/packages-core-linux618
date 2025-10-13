@@ -7,11 +7,11 @@
 _basekernel=6.18
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
-_commit=0739473694c4878513031006829f1030ec850bc2
-_rc=rc0
+_commit=
+_rc=rc1
 pkgbase=linux${_basever}
-pkgver=6.18.0rc0
-pkgrel=4
+pkgver=6.18.0rc1
+pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -36,8 +36,8 @@ options=(
 source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}-${_rc}.tar.gz
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}.tar.gz
-        #https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
-        https://github.com/torvalds/linux/archive/${_commit}.tar.gz
+        https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
+        #https://github.com/torvalds/linux/archive/${_commit}.tar.gz
         #https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz
         config
         # Upstream Patches
@@ -98,7 +98,7 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('aedb4cda7473a79d49eedeefa61e5828e8e8d4d8615d7820619da3bc0ad422b5'
+sha256sums=('82351c8b66b6aadbb70e4393af665b1d85ba2cfb2c05512b0bbb4b5cfc2769af'
             '64593456bb9b35efe4d20872706f046f278e72416d6ce4ee4c7268c3320748a7'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
@@ -165,12 +165,6 @@ prepare() {
   cp ../config .config
   make olddefconfig
   diff -u ../config .config || :
-
-  msg "set PATCHLEVEL to 18"
-  sed -ri "s|^(PATCHLEVEL =).*|\1 18|" Makefile
-  
-  msg "set EXTRAVERSION to ${_rc}"
-  sed -ri "s|^(EXTRAVERSION =).*|\1 -${_rc}|" Makefile
 
   make -s kernelrelease > version
   msg "Prepared $pkgbase version $(<version)"

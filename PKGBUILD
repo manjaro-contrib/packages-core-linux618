@@ -56,7 +56,15 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.
         0999-patch_realtek.patch
         # ROG ALLY Patches (wip/ally-6.14-refactor)
         0002-hid-add-VID-PID-for-ASUS-ROG-RAIKIRI-PRO.patch
-        0000-v12-0-8-platform-x86-Add-asus-armoury-driver.patch
+        v15-0001-platform-x86-asus-wmi-export-symbols-used-for-re.patch
+        v15-0002-platform-x86-asus-armoury-move-existing-tunings-.patch
+        v15-0003-platform-x86-asus-armoury-add-panel_hd_mode-attr.patch
+        v15-0004-platform-x86-asus-armoury-add-apu-mem-control-su.patch
+        v15-0005-platform-x86-asus-armoury-add-core-count-control.patch
+        v15-0006-platform-x86-asus-armoury-add-screen-auto-bright.patch
+        v15-0007-platform-x86-asus-wmi-deprecate-bios-features.patch
+        v15-0008-platform-x86-asus-wmi-rename-ASUS_WMI_DEVID_PPT_.patch
+        v15-0009-platform-x86-asus-armoury-add-ppt_-and-nv_-tunin.patch
         0014-asus-ally-hid-add-new-driver-for-ASUS-Ally-handhelds.patch
         0015-asus-ally-hid-Add-joystick-LED-ring-support.patch
         0016-asus-ally-hid-initial-Ally-X-gamepad-bringup.patch

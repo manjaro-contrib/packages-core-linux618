@@ -8,9 +8,9 @@ _basekernel=6.18
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 _commit=
-_rc=rc1
+_rc=rc2
 pkgbase=linux${_basever}
-pkgver=6.18.0rc1
+pkgver=6.18.0rc2
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -106,7 +106,7 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('82351c8b66b6aadbb70e4393af665b1d85ba2cfb2c05512b0bbb4b5cfc2769af'
+sha256sums=('fd0b6a8f757ba37b3a9f5ad6c4f32f733f3291e46b0afeb5361fbc92ff3cee4e'
             '64593456bb9b35efe4d20872706f046f278e72416d6ce4ee4c7268c3320748a7'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
@@ -116,7 +116,15 @@ sha256sums=('82351c8b66b6aadbb70e4393af665b1d85ba2cfb2c05512b0bbb4b5cfc2769af'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
             'e5671d5f6fe27c072397efeedb876912d52e104488baa8cd149727ff0814e657'
-            '224f09138c6c5b01b938f3b6bc80530d1048ec82455b837120c30074c70bc3fb'
+            '151d939fabd2f2d2fcb062f0e5e4b1e7fa43cc9007f855c2b95b1ffd31413e50'
+            '5c5e1d8bdfb6ac2906b4f139d8dafc1481d92dc7b23f8390b77b4d4c1305c463'
+            'c7b8ab9fdbcaa57da4b3a5af1dd57e3606a784896634ec3a9f507e5cec30a990'
+            '8ccc2053d097fc61fdfcdba114452b963f72379767f5f1bb0e4679391117c18d'
+            'c75991ab57077f21030f77c4d6ff499292f4fa93b13dda9120d1aecdd2d4a637'
+            'e458c9eb9263c0dfd97398c3292d27c59785533121fa73ce714746bdfdf39579'
+            'c3e7e901cb0055ff536e7730b4a51a72f935b69bcd60b95dffe7528c5caa3613'
+            '52aa61a856ee2b5f1ce86ab688834d6e5bd2fbe0b1cfa6806eee38887c5e3b8f'
+            'a473ad994a4d829239ca59cb64d823399bd4978ae0047464a4435e51a7b56208'
             '1be445ba5698e135c32433c2bca3334c580d8d72dc3111d423dcc8d2da228e41'
             '5d73542ba4aa68d0b00b044a4a3eb2ca8fbfbb16790edbb22417cffeec4caade'
             'f91b213a05b679f14f2c61b14fbd2dda69950e17ded5d3b1e08eab09b8656f19'

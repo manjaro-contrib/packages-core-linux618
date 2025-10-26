@@ -95,7 +95,13 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.
         0000-HID-Add-Legion-Go-S-Driver.patch::https://patchwork.kernel.org/series/978420/mbox/
         # AMD patches
         # https://www.phoronix.com/news/AMD-ISP4-Linux-Driver-v3
-        0000-v3-1-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch
+        0000-v5-1-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-2-Bin.Du@amd.com/raw
+        0000-v5-2-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-3-Bin.Du@amd.com/raw
+        0000-v5-3-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-4-Bin.Du@amd.com/raw
+        0000-v5-4-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-5-Bin.Du@amd.com/raw
+        0000-v5-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-6-Bin.Du@amd.com/raw
+        0000-v5-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-7-Bin.Du@amd.com/raw
+        0000-v5-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-8-Bin.Du@amd.com/raw
 )
 
 if [[ ! -z "$_commit" ]]; then
@@ -149,7 +155,13 @@ sha256sums=('fd0b6a8f757ba37b3a9f5ad6c4f32f733f3291e46b0afeb5361fbc92ff3cee4e'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            '160a78e648189f9e09f3c64d665ef9b21a4b0b0b78ad429e8afb38635ec7b0fe')
+            'a61d3dcbf3f276c1711f697ee5209bc60afd0b6df4bc5d596f631517eeeb3bff'
+            'a0bbfc21fe93dece69caea2eb117b7f0033b47c4707a8432ea18392b2cebdb61'
+            'fb410302c38f8dbfcdcb4c4f36f81b6d90d97d4243a2d8a2f80587dc26e6f15b'
+            'e6152d8b9a82c8207af09398564c136aa417048d26932d690d6c204d667a4be7'
+            'f7ecff1453fb1433e4dc68c57d5da8e1c52a90429c14c22cfb9ebc28dcc7cd7c'
+            '4657ec8aa7aa3d618495c82a6d27f50054d7a5826cde5a076a2c2b4aaf5b1040'
+            'f0b4e3517e16616b0c4008123081a7b298e488f16660d8a70bead5a7dd6a419c')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

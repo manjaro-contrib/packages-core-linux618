@@ -8,9 +8,9 @@ _basekernel=6.18
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 _commit=
-_rc=rc2
+_rc=rc3
 pkgbase=linux${_basever}
-pkgver=6.18.0rc2
+pkgver=6.18.0rc3
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -112,7 +112,7 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('fd0b6a8f757ba37b3a9f5ad6c4f32f733f3291e46b0afeb5361fbc92ff3cee4e'
+sha256sums=('b74e58937e196289c59238d84208ca668d60c8497e50e01775ce696f864a170c'
             '78cc4faf437baff292e32c74a6b0672048169805d44387f6a4617f1d0069713c'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
@@ -155,13 +155,13 @@ sha256sums=('fd0b6a8f757ba37b3a9f5ad6c4f32f733f3291e46b0afeb5361fbc92ff3cee4e'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            'a61d3dcbf3f276c1711f697ee5209bc60afd0b6df4bc5d596f631517eeeb3bff'
-            'a0bbfc21fe93dece69caea2eb117b7f0033b47c4707a8432ea18392b2cebdb61'
-            'fb410302c38f8dbfcdcb4c4f36f81b6d90d97d4243a2d8a2f80587dc26e6f15b'
-            'e6152d8b9a82c8207af09398564c136aa417048d26932d690d6c204d667a4be7'
-            'f7ecff1453fb1433e4dc68c57d5da8e1c52a90429c14c22cfb9ebc28dcc7cd7c'
-            '4657ec8aa7aa3d618495c82a6d27f50054d7a5826cde5a076a2c2b4aaf5b1040'
-            'f0b4e3517e16616b0c4008123081a7b298e488f16660d8a70bead5a7dd6a419c')
+            'ff54d9425d7f203ff6d9d53acd40b74fc7c2cf71e823f2d26042b1004284637d'
+            'ee9e34dbc5900acf34cc74d11d464964431bb2f77ac42cacc0953ed9d7a3fad4'
+            'b8eb4b1f3cbb56851522547b164ef4b815daa3cd60758edbc40e1aed4a7d19f3'
+            'f0a578d681f6764b3d0824f33f62bba5599591e83d05772233a931f1fb437c76'
+            '91eb1701ba9afc1267b3b00eab94c87776b049c0a84a3b0f7e097410bef51ee5'
+            '4233f03679209eaa76541f8d5a6aeba5295804a9a16ec665276e22e0e8370295'
+            'da5d111aa065dbff8e54cb85b0794a92515b4f5a22e410bb8a57729c9d2e94ca')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

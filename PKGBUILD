@@ -56,15 +56,15 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.
         0999-patch_realtek.patch
         # ROG ALLY Patches (wip/ally-6.14-refactor)
         0002-hid-add-VID-PID-for-ASUS-ROG-RAIKIRI-PRO.patch
-        v15-0001-platform-x86-asus-wmi-export-symbols-used-for-re.patch
-        v15-0002-platform-x86-asus-armoury-move-existing-tunings-.patch
-        v15-0003-platform-x86-asus-armoury-add-panel_hd_mode-attr.patch
-        v15-0004-platform-x86-asus-armoury-add-apu-mem-control-su.patch
-        v15-0005-platform-x86-asus-armoury-add-core-count-control.patch
-        v15-0006-platform-x86-asus-armoury-add-screen-auto-bright.patch
-        v15-0007-platform-x86-asus-wmi-deprecate-bios-features.patch
-        v15-0008-platform-x86-asus-wmi-rename-ASUS_WMI_DEVID_PPT_.patch
-        v15-0009-platform-x86-asus-armoury-add-ppt_-and-nv_-tunin.patch
+        v17-0001-platform-x86-asus-wmi-export-symbols-used-for-re.patch
+        v17-0002-platform-x86-asus-armoury-move-existing-tunings-.patch
+        v17-0003-platform-x86-asus-armoury-add-panel_hd_mode-attr.patch
+        v17-0004-platform-x86-asus-armoury-add-apu-mem-control-su.patch
+        v17-0005-platform-x86-asus-armoury-add-core-count-control.patch
+        v17-0006-platform-x86-asus-armoury-add-screen-auto-bright.patch
+        v17-0007-platform-x86-asus-wmi-deprecate-bios-features.patch
+        v17-0008-platform-x86-asus-wmi-rename-ASUS_WMI_DEVID_PPT_.patch
+        v17-0009-platform-x86-asus-armoury-add-ppt_-and-nv_-tunin.patch
         0014-asus-ally-hid-add-new-driver-for-ASUS-Ally-handhelds.patch
         0015-asus-ally-hid-Add-joystick-LED-ring-support.patch
         0016-asus-ally-hid-initial-Ally-X-gamepad-bringup.patch
@@ -122,15 +122,15 @@ sha256sums=('0ed47cb05c1ec56cb3a277664575da49b1d9ed6fd02b674cc29ff37e0f93b0a1'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
             'e5671d5f6fe27c072397efeedb876912d52e104488baa8cd149727ff0814e657'
-            '151d939fabd2f2d2fcb062f0e5e4b1e7fa43cc9007f855c2b95b1ffd31413e50'
-            '5c5e1d8bdfb6ac2906b4f139d8dafc1481d92dc7b23f8390b77b4d4c1305c463'
-            'c7b8ab9fdbcaa57da4b3a5af1dd57e3606a784896634ec3a9f507e5cec30a990'
-            '8ccc2053d097fc61fdfcdba114452b963f72379767f5f1bb0e4679391117c18d'
-            'c75991ab57077f21030f77c4d6ff499292f4fa93b13dda9120d1aecdd2d4a637'
-            'e458c9eb9263c0dfd97398c3292d27c59785533121fa73ce714746bdfdf39579'
-            'c3e7e901cb0055ff536e7730b4a51a72f935b69bcd60b95dffe7528c5caa3613'
-            '52aa61a856ee2b5f1ce86ab688834d6e5bd2fbe0b1cfa6806eee38887c5e3b8f'
-            'a473ad994a4d829239ca59cb64d823399bd4978ae0047464a4435e51a7b56208'
+            'b86329d9567c6cd7c21ba320eadfe41b1af1cea432ff3ea79197a3b1dabda622'
+            'c27e2ff59671343cbc10b4a63bbd46d40f3e54f84a73f58c009022ab6c6cf10e'
+            '89826ed555f9ad1bd27fc560eacc85825c4095ca5815286d94bae069cbe41901'
+            '3402a2bca1359913e38dd3b0dda88a1e94749ac4dfcc05c23b849a16778c692a'
+            'd71d5e9d6d04f63b2e7acbfc51c15c345f969d71c5622e541401cd3eb53f04e3'
+            'd89850939d37dbb9cb8ca00b14560eef01784ed0b2acbe6d5b953e9e2b02686c'
+            '0ce1d6aba709d3ab38f4af130455301ab8d0cac13765a59f034e8f1e2b0d07c2'
+            '1dd4b324a1fd9a49d11917a535e3ebd6d5e22fc5707adb8d8c5fed76073bdc8c'
+            'e75afbec74c31e6e3ea87ef81586c74539b5ac757f12cb03086f021cbc108435'
             '1be445ba5698e135c32433c2bca3334c580d8d72dc3111d423dcc8d2da228e41'
             '5d73542ba4aa68d0b00b044a4a3eb2ca8fbfbb16790edbb22417cffeec4caade'
             'f91b213a05b679f14f2c61b14fbd2dda69950e17ded5d3b1e08eab09b8656f19'
@@ -155,13 +155,13 @@ sha256sums=('0ed47cb05c1ec56cb3a277664575da49b1d9ed6fd02b674cc29ff37e0f93b0a1'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            'ff54d9425d7f203ff6d9d53acd40b74fc7c2cf71e823f2d26042b1004284637d'
-            'ee9e34dbc5900acf34cc74d11d464964431bb2f77ac42cacc0953ed9d7a3fad4'
-            'b8eb4b1f3cbb56851522547b164ef4b815daa3cd60758edbc40e1aed4a7d19f3'
-            'f0a578d681f6764b3d0824f33f62bba5599591e83d05772233a931f1fb437c76'
-            '91eb1701ba9afc1267b3b00eab94c87776b049c0a84a3b0f7e097410bef51ee5'
-            '4233f03679209eaa76541f8d5a6aeba5295804a9a16ec665276e22e0e8370295'
-            'da5d111aa065dbff8e54cb85b0794a92515b4f5a22e410bb8a57729c9d2e94ca')
+            'a61d3dcbf3f276c1711f697ee5209bc60afd0b6df4bc5d596f631517eeeb3bff'
+            'a0bbfc21fe93dece69caea2eb117b7f0033b47c4707a8432ea18392b2cebdb61'
+            'fb410302c38f8dbfcdcb4c4f36f81b6d90d97d4243a2d8a2f80587dc26e6f15b'
+            'e6152d8b9a82c8207af09398564c136aa417048d26932d690d6c204d667a4be7'
+            'f7ecff1453fb1433e4dc68c57d5da8e1c52a90429c14c22cfb9ebc28dcc7cd7c'
+            '4657ec8aa7aa3d618495c82a6d27f50054d7a5826cde5a076a2c2b4aaf5b1040'
+            'f0b4e3517e16616b0c4008123081a7b298e488f16660d8a70bead5a7dd6a419c')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

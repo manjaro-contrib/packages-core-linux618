@@ -8,9 +8,9 @@ _basekernel=6.18
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 _commit=
-_rc=rc4
+_rc=rc5
 pkgbase=linux${_basever}
-pkgver=6.18.0rc4
+pkgver=6.18.0rc5
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -112,7 +112,7 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('0ed47cb05c1ec56cb3a277664575da49b1d9ed6fd02b674cc29ff37e0f93b0a1'
+sha256sums=('828cc7d4cac534124fcc53b1a17e10fb2e88341d71cbb314fd1f3551191652a3'
             'bbef7201f764de47f3e93f564a9ebc298a7dc93858e7ac93db41cfe729303e91'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'

@@ -1,0 +1,59 @@
+From 55d2ccdaba36c6cf9a3639d083c1089f3320a347 Mon Sep 17 00:00:00 2001
+From: Zhang Heng <zhangheng@kylinos.cn>
+Date: Thu, 18 Sep 2025 21:37:07 +0800
+Subject: [PATCH v4] HID: quirks: Add device descriptor for 4c4a:4155
+
+Multiple USB devices use the same ID. To avoid affecting functionality,
+device descriptors are added to distinguish between them
+
+Signed-off-by: Zhang Heng <zhangheng@kylinos.cn>
+---
+ drivers/hid/usbhid/hid-core.c | 11 +++++++++++
+ drivers/hid/usbhid/usbhid.h   |  2 ++
+ 2 files changed, 13 insertions(+)
+
+diff --git a/drivers/hid/usbhid/hid-core.c b/drivers/hid/usbhid/hid-core.c
+index aac0051a2cf6..d0b994f97fcc 100644
+--- a/drivers/hid/usbhid/hid-core.c
++++ b/drivers/hid/usbhid/hid-core.c
+@@ -992,6 +992,12 @@ static int usbhid_parse(struct hid_device *hid)
+ 
+ 	quirks = hid_lookup_quirk(hid);
+ 
++	if ((hid->vendor == USB_VENDOR_ID_SMARTLINKTECHNOLOGY) && (hid->product == USB_DEVICE_ID_SMARTLINKTECHNOLOGY_4155)) {
++		if(strcmp(dev->manufacturer, "SmartlinkTechnology") == 0) {
++			quirks |= HID_QUIRK_IGNORE;
++		}
++	}
++
+ 	if (quirks & HID_QUIRK_IGNORE)
+ 		return -ENODEV;
+ 
+@@ -1432,6 +1438,11 @@ static int usbhid_probe(struct usb_interface *intf, const struct usb_device_id *
+ 	spin_lock_init(&usbhid->lock);
+ 	mutex_init(&usbhid->mutex);
+ 
++	if ((hid->vendor == USB_VENDOR_ID_SMARTLINKTECHNOLOGY) && (hid->product == USB_DEVICE_ID_SMARTLINKTECHNOLOGY_4155)) {
++		if(strcmp(dev->manufacturer, "SmartlinkTechnology") == 0)
++			return 0;
++
++	}
+ 	ret = hid_add_device(hid);
+ 	if (ret) {
+ 		if (ret != -ENODEV)
+diff --git a/drivers/hid/usbhid/usbhid.h b/drivers/hid/usbhid/usbhid.h
+index 75fe85d3d27a..3760c73c3455 100644
+--- a/drivers/hid/usbhid/usbhid.h
++++ b/drivers/hid/usbhid/usbhid.h
+@@ -48,6 +48,8 @@ struct usb_interface *usbhid_find_interface(int minor);
+  */
+ #define HID_IN_POLLING		14
+ 
++#define USB_VENDOR_ID_SMARTLINKTECHNOLOGY		0x4c4a
++#define USB_DEVICE_ID_SMARTLINKTECHNOLOGY_4155		0x4155
+ /*
+  * USB-specific HID struct, to be pointed to
+  * from struct hid_device->driver_data
+-- 
+2.47.1
+

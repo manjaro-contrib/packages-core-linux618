@@ -84,10 +84,6 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.
         0030-asus-wmi-fixup-screenpad-brightness.patch
         # OrangePi Neo patches
         0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
-        # https://lists.debian.org/debian-kernel/2025/10/msg00387.html
-        v4-0001-HID-quirks-Change-manufacturer-for-4c4a-4155.patch
-        # https://www.mail-archive.com/debian-kernel@lists.debian.org/msg144578.html
-        v4-0001-HID-quirks-Add-device-descriptor-for-4c4a-4155.patch
         # Zotac Zone patches
         0001-zotac-zone-hid-initial-impl.patch
         0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch
@@ -153,8 +149,6 @@ sha256sums=('4a2916f05a0ed9b771af99ce7710b007b618b93c158cd7549e02b80218afcc35'
             '8e6f050f3e176e7076d0f11375be55b07689d599c37ddb406c7494ea54232247'
             'e332e8137eec1f74e8cdfe27baad2a738620ef3498bca19be9c934044de0fa78'
             '14278fdc353e6ab5abc9c1a6b753221df12c9a0e6a8d9fec8baf81d7897a6a4b'
-            '01bcbc0589cc6f13d2d68be3533a970b2831eaf50f50437390c68e71363c96c4'
-            'f6bdc2420830326eab8e65ac6aac12c3dad27f0887beb3ff54071bc4ba62947f'
             'b67f25c13e946b51712b0e828ebbf8bea980d339bd6effab17869f6a62e428df'
             'c30d45e2ccde056b277246321040164f70db8adb8b8335a2fbdd4a2bf74b97cf'
             '138684588665b8f651dffb4e75c265a2b81f6bd7a606f75f8fc6814a4a63d3fd'

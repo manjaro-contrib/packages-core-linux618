@@ -8,10 +8,10 @@ _basekernel=6.18
 _basever=${_basekernel//.}
 _kernelname=-MANJARO
 _commit=
-_rc=rc7
+_rc=
 pkgbase=linux${_basever}
-pkgver=6.18.0rc7
-pkgrel=1
+pkgver=6.18.0
+pkgrel=0
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -33,14 +33,15 @@ options=(
   !debug
   !strip
 )
-source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
+source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.xz"
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}-${_rc}.tar.gz
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}.tar.gz
-        https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
+        #https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
         #https://github.com/torvalds/linux/archive/${_commit}.tar.gz
         #https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz
         config
         # Upstream Patches
+        0000-drm-amd-Skip-power-ungate-during-suspend-for-VPE.patch::https://lore.kernel.org/stable/20251130014631.29755-1-superm1@kernel.org/raw
         0000-drm-amdgpu-fix-race-condition-in-amdgpu_vm_wait_idle-during-process-kill.patch::https://lore.kernel.org/all/20250807084655.1597669-1-Tong.Liu01@amd.com/raw
         # Turn off custom brightness-curve when nonsense is found in BIOS
         0001-drm-amd-Sanity-check-custom-brightness-curve-data-po.patch
@@ -94,14 +95,14 @@ source=(#"https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.
         # Lenovo Legion Go S
         0000-HID-Add-Legion-Go-S-Driver.patch::https://patchwork.kernel.org/series/978420/mbox/
         # AMD patches
-        # https://www.phoronix.com/news/AMD-ISP4-Linux-Driver-v3
-        0000-v5-1-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-2-Bin.Du@amd.com/raw
-        0000-v5-2-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-3-Bin.Du@amd.com/raw
-        0000-v5-3-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-4-Bin.Du@amd.com/raw
-        0000-v5-4-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-5-Bin.Du@amd.com/raw
-        0000-v5-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-6-Bin.Du@amd.com/raw
-        0000-v5-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-7-Bin.Du@amd.com/raw
-        0000-v5-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/all/20251024090643.271883-8-Bin.Du@amd.com/raw
+        # https://www.phoronix.com/news/AMD-ISP4-Driver-v6
+        0000-v6-1-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-2-Bin.Du@amd.com/raw
+        0000-v6-2-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-3-Bin.Du@amd.com/raw
+        0000-v6-3-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-4-Bin.Du@amd.com/raw
+        0000-v6-4-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-5-Bin.Du@amd.com/raw
+        0000-v6-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-6-Bin.Du@amd.com/raw
+        0000-v6-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-7-Bin.Du@amd.com/raw
+        0000-v6-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-8-Bin.Du@amd.com/raw
 )
 
 if [[ ! -z "$_commit" ]]; then
@@ -112,8 +113,9 @@ else
   _srcdir="linux-${_basekernel}"
 fi
 
-sha256sums=('4a2916f05a0ed9b771af99ce7710b007b618b93c158cd7549e02b80218afcc35'
+sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '5709deb0baa308cd1c64baf99710983f0265ee0c7d5c072c4917248b0cdb3b98'
+            '30b9a75e7b9026928fed212c303567d287e26eb0e6ade99689c8b21c56f23d84'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'
@@ -155,13 +157,13 @@ sha256sums=('4a2916f05a0ed9b771af99ce7710b007b618b93c158cd7549e02b80218afcc35'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            'a61d3dcbf3f276c1711f697ee5209bc60afd0b6df4bc5d596f631517eeeb3bff'
-            'a0bbfc21fe93dece69caea2eb117b7f0033b47c4707a8432ea18392b2cebdb61'
-            'fb410302c38f8dbfcdcb4c4f36f81b6d90d97d4243a2d8a2f80587dc26e6f15b'
-            'e6152d8b9a82c8207af09398564c136aa417048d26932d690d6c204d667a4be7'
-            'f7ecff1453fb1433e4dc68c57d5da8e1c52a90429c14c22cfb9ebc28dcc7cd7c'
-            '4657ec8aa7aa3d618495c82a6d27f50054d7a5826cde5a076a2c2b4aaf5b1040'
-            'f0b4e3517e16616b0c4008123081a7b298e488f16660d8a70bead5a7dd6a419c')
+            'a158a6c9a7898b81aae1f1bfc92509271ddd46f75e57a5ea8ba04d32cd976d92'
+            'f78000f07b52acd1e11cd353240f879a14e9574a7e4914a0559294d3821cccb6'
+            '47b872f7ad75a351f961ecceb3fedeed1b0989db7ead10f923fae261736581ad'
+            'a86fd5deed832be3a850945fa14e5a103d5035518d818be63afb95355209ac1e'
+            '1bba9d30cbbdd0880a0241f95738cab40bc598cfdffbb9ad8b41c779c5f548f2'
+            'd19c590a9a58f8bb00eefc4abfe35fe8c539ee1090a3c1417727f42a8f435cd2'
+            '163418089f04d4a25557b3f0af02830722b74cb29d0c9dc06349df90c2518742')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

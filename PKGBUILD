@@ -10,7 +10,7 @@ _kernelname=-MANJARO
 _commit=
 _rc=
 pkgbase=linux${_basever}
-pkgver=6.18.0
+pkgver=6.18.1
 pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
@@ -38,9 +38,10 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         #https://github.com/torvalds/linux/archive/refs/tags/v${_basekernel}.tar.gz
         #https://git.kernel.org/torvalds/t/linux-${_basekernel}-${_rc}.tar.gz
         #https://github.com/torvalds/linux/archive/${_commit}.tar.gz
-        #https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz
+        https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz
         config
         # Upstream Patches
+        0000-revert_drm-amd-display_fix_pbn_to_kbps_Conversion.patch::https://lore.kernel.org/all/20251209171810.2514240-1-mario.limonciello@amd.com/raw
         0000-drm-amd-Skip-power-ungate-during-suspend-for-VPE.patch::https://lore.kernel.org/stable/20251130014631.29755-1-superm1@kernel.org/raw
         0000-drm-amdgpu-fix-race-condition-in-amdgpu_vm_wait_idle-during-process-kill.patch::https://lore.kernel.org/all/20250807084655.1597669-1-Tong.Liu01@amd.com/raw
         # Turn off custom brightness-curve when nonsense is found in BIOS
@@ -114,7 +115,9 @@ else
 fi
 
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
+            'd998cc20acf4d450d765423b4d6ba603f351e4b1ab1b929b678b8bb23d410f0e'
             '68400ccb496323116e130e6818530b4474e6e928787bf8bbefe64605e7e10f5d'
+            '90c2a4795664360d704ac22eea75dc7b40543ba5755dc11f0a122828f9e55006'
             '30b9a75e7b9026928fed212c303567d287e26eb0e6ade99689c8b21c56f23d84'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'

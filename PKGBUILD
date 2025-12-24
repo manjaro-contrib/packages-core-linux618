@@ -11,7 +11,7 @@ _commit=
 _rc=
 pkgbase=linux${_basever}
 pkgver=6.18.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -104,6 +104,10 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0000-v6-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-6-Bin.Du@amd.com/raw
         0000-v6-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-7-Bin.Du@amd.com/raw
         0000-v6-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-8-Bin.Du@amd.com/raw
+
+        #iwlwifi: Fix firmware version handling
+        0000-iwlwifi-fix.patch::https://bugzilla.kernel.org/attachment.cgi?id=309024
+        0000-iwlwifi-fix-firmware-version-handling.patch::https://git.kernel.org/pub/scm/linux/kernel/git/wireless/wireless.git/patch/?id=ca5898222914f399797cea1aeb0ce77109ca2e62
 )
 
 if [[ ! -z "$_commit" ]]; then
@@ -166,7 +170,9 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'a86fd5deed832be3a850945fa14e5a103d5035518d818be63afb95355209ac1e'
             '1bba9d30cbbdd0880a0241f95738cab40bc598cfdffbb9ad8b41c779c5f548f2'
             'd19c590a9a58f8bb00eefc4abfe35fe8c539ee1090a3c1417727f42a8f435cd2'
-            '163418089f04d4a25557b3f0af02830722b74cb29d0c9dc06349df90c2518742')
+            '163418089f04d4a25557b3f0af02830722b74cb29d0c9dc06349df90c2518742'
+            '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4'
+            '82c4a23818e7d6b240f8e8ab8732b043dc1c792834974e91edab1b7f6bfe20ae')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

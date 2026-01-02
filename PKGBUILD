@@ -11,7 +11,7 @@ _commit=
 _rc=
 pkgbase=linux${_basever}
 pkgver=6.18.3
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -41,7 +41,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz
         config
         # Upstream Patches
-        #0000-revert_drm-amd-display_fix_pbn_to_kbps_Conversion.patch::https://lore.kernel.org/all/20251209171810.2514240-1-mario.limonciello@amd.com/raw
         0000-drm-amd-Skip-power-ungate-during-suspend-for-VPE.patch::https://lore.kernel.org/stable/20251130014631.29755-1-superm1@kernel.org/raw
         0000-drm-amdgpu-fix-race-condition-in-amdgpu_vm_wait_idle-during-process-kill.patch::https://lore.kernel.org/all/20250807084655.1597669-1-Tong.Liu01@amd.com/raw
         # Turn off custom brightness-curve when nonsense is found in BIOS
@@ -53,6 +52,16 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # ARCH Patches
         0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
         0002-drivers-firmware-skip-simpledrm-if-nvidia-drm.modese.patch
+        0003-drm-amdgpu-avoid-memory-allocation-in-the-critical-code-path-v3.patch::https://github.com/archlinux/linux/commit/127e151c7545f8ce65145cf9d57c737378532bc5.patch
+        0004-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-critical-path.patch::https://github.com/archlinux/linux/commit/be28c52ced30ac099f3337788fbd3d2e20ffc3f9.patch
+        0005-drm-amdgpu-dont-attach-the-tlb-fence-for-SI.patch::https://github.com/archlinux/linux/commit/45d070266c871a170c81b6d4b837a6b06f5ffd1b.patch
+        0006-xfrm-Fix-inner-mode-lookup-in-tunnel-mode-GSO-segmentation.patch::https://github.com/archlinux/linux/commit/ed0e6d0a1b9a9efb2509691ce314cabd17c90eaf.patch
+        0007-ASoC-cs35l41-Always-return-0-when-a-subsystem-ID-is-found.patch::https://github.com/archlinux/linux/commit/1e794f6c817f8b27e22dfb168d85711c46ced892.patch
+        0008-Revert-gpio-swnode-dont-use-the-swnodes-name-as-the-key-for-GPIO-lookup.patch::https://github.com/archlinux/linux/commit/30484f0eda8a4d6f6207d2f961d90a15799f23e9.patch
+        0009-wifi-iwlwifi-Fix-firmware-version-handling.patch::https://github.com/archlinux/linux/commit/75ecfbc028d3070e105982399c5eb3e793468c66.patch
+        0010-btrfs-fix-use-after-free-warning-in-btrfs_get_or_create_delayed_node.patch::https://github.com/archlinux/linux/commit/fa9d9b94704bb2a69305a6222c4dfe797254b3f1.patch
+        0011-rust_binder-remove-spin_lock-in-rust_shrink_free_page.patch::https://github.com/archlinux/linux/commit/ed4bfee29e56d2f346007429965723385615209c.patch
+        0012-rust_binder-correctly-handle-FDA-objects-of-length-zero.patch::https://github.com/archlinux/linux/commit/0fdf41d504a1f9fa5800917de40aca8d3054e81f.patch
         # Manjaro Patches
         # Realtek patch
         0999-patch_realtek.patch
@@ -104,10 +113,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0000-v6-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-6-Bin.Du@amd.com/raw
         0000-v6-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-7-Bin.Du@amd.com/raw
         0000-v6-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-8-Bin.Du@amd.com/raw
-
         #iwlwifi: Fix firmware version handling
         0000-iwlwifi-fix.patch::https://bugzilla.kernel.org/attachment.cgi?id=309024
-        0000-iwlwifi-fix-firmware-version-handling.patch::https://git.kernel.org/pub/scm/linux/kernel/git/wireless/wireless.git/patch/?id=ca5898222914f399797cea1aeb0ce77109ca2e62
 )
 
 if [[ ! -z "$_commit" ]]; then
@@ -121,7 +128,6 @@ fi
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '7f7c6860257727176412596da2f73530003d7416a7c1cfbb9358cf6ca1b59a03'
             'e895a85bde85e4eff4f471cf793ecb3494d0fd70e0aa0211438db042be826846'
-            #'90c2a4795664360d704ac22eea75dc7b40543ba5755dc11f0a122828f9e55006'
             '30b9a75e7b9026928fed212c303567d287e26eb0e6ade99689c8b21c56f23d84'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
@@ -129,6 +135,16 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '512032c6b93fce24254da6cace7bf101c8f7c824761a0f99deed4b7724ac6f3e'
             'e5e98d62b63704cecdf32dbe6a9bafea6e70b23fa8e01fe96ca220ac6036392e'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
+            '160d500954014fd3ebe75b3cac836f75423df7fbcf0390a7198701e47301245f'
+            'a9803ab6cd82324c7d67711e9a7155e5642d4f9652a4ebdddb0eb0ebdbe40aa0'
+            'd89c1ee441542921a12afc9eb564e04139ff12a39de59e8ea39208a7e1e7be22'
+            '60d48a427659d05babda74f496cf1c938315ee911bb440625a717807a8dc057d'
+            '4a17b48d6653b6fc70caa02e3b248e040e0692c12aecaf20e76279b23e6045e3'
+            'ed121a3f1b8e7291cf01e008a9064452013959a4b09136c60d1d8ec8437c42c1'
+            '579f1c24eb3674dc1b03176274b4cce5a12cfce5c0e5214b978a72536cc683da'
+            '51283be0fa67ff51011f8798917bd48fd8d2937fa775cbc948a063945e9629b3'
+            '2f159d7f0b6ca0c331a72275cd89bfae78e6e30d84786072918d39e4f2ef6b21'
+            '4e8b07b2ce6b5fbbba48e5c30cd88a492d55dcc2c4a27d2023bc5d7144d8096b'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
             'e5671d5f6fe27c072397efeedb876912d52e104488baa8cd149727ff0814e657'
             'b86329d9567c6cd7c21ba320eadfe41b1af1cea432ff3ea79197a3b1dabda622'
@@ -171,8 +187,7 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '1bba9d30cbbdd0880a0241f95738cab40bc598cfdffbb9ad8b41c779c5f548f2'
             'd19c590a9a58f8bb00eefc4abfe35fe8c539ee1090a3c1417727f42a8f435cd2'
             '163418089f04d4a25557b3f0af02830722b74cb29d0c9dc06349df90c2518742'
-            '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4'
-            '82c4a23818e7d6b240f8e8ab8732b043dc1c792834974e91edab1b7f6bfe20ae')
+            '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

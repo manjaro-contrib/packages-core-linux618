@@ -56,7 +56,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0004-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-critical-path.patch::https://github.com/archlinux/linux/commit/be28c52ced30ac099f3337788fbd3d2e20ffc3f9.patch
         #0005-drm-amdgpu-dont-attach-the-tlb-fence-for-SI.patch::https://github.com/archlinux/linux/commit/45d070266c871a170c81b6d4b837a6b06f5ffd1b.patch
         0006-xfrm-Fix-inner-mode-lookup-in-tunnel-mode-GSO-segmentation.patch::https://github.com/archlinux/linux/commit/ed0e6d0a1b9a9efb2509691ce314cabd17c90eaf.patch
-        0007-ASoC-cs35l41-Always-return-0-when-a-subsystem-ID-is-found.patch::https://github.com/archlinux/linux/commit/1e794f6c817f8b27e22dfb168d85711c46ced892.patch
+        #0007-ASoC-cs35l41-Always-return-0-when-a-subsystem-ID-is-found.patch::https://github.com/archlinux/linux/commit/1e794f6c817f8b27e22dfb168d85711c46ced892.patch
         #0008-Revert-gpio-swnode-dont-use-the-swnodes-name-as-the-key-for-GPIO-lookup.patch::https://github.com/archlinux/linux/commit/30484f0eda8a4d6f6207d2f961d90a15799f23e9.patch
         #0009-wifi-iwlwifi-Fix-firmware-version-handling.patch::https://github.com/archlinux/linux/commit/75ecfbc028d3070e105982399c5eb3e793468c66.patch
         0010-btrfs-fix-use-after-free-warning-in-btrfs_get_or_create_delayed_node.patch::https://github.com/archlinux/linux/commit/fa9d9b94704bb2a69305a6222c4dfe797254b3f1.patch
@@ -139,7 +139,7 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'a9803ab6cd82324c7d67711e9a7155e5642d4f9652a4ebdddb0eb0ebdbe40aa0'
             #'d89c1ee441542921a12afc9eb564e04139ff12a39de59e8ea39208a7e1e7be22'
             '60d48a427659d05babda74f496cf1c938315ee911bb440625a717807a8dc057d'
-            '4a17b48d6653b6fc70caa02e3b248e040e0692c12aecaf20e76279b23e6045e3'
+            #'4a17b48d6653b6fc70caa02e3b248e040e0692c12aecaf20e76279b23e6045e3'
             #'ed121a3f1b8e7291cf01e008a9064452013959a4b09136c60d1d8ec8437c42c1'
             #'579f1c24eb3674dc1b03176274b4cce5a12cfce5c0e5214b978a72536cc683da'
             '51283be0fa67ff51011f8798917bd48fd8d2937fa775cbc948a063945e9629b3'

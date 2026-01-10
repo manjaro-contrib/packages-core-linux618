@@ -105,14 +105,14 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # Lenovo Legion Go S
         0000-HID-Add-Legion-Go-S-Driver.patch::https://patchwork.kernel.org/series/978420/mbox/
         # AMD patches
-        # https://www.phoronix.com/news/AMD-ISP4-Driver-v6
-        0000-v6-1-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-2-Bin.Du@amd.com/raw
-        0000-v6-2-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-3-Bin.Du@amd.com/raw
-        0000-v6-3-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-4-Bin.Du@amd.com/raw
-        0000-v6-4-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-5-Bin.Du@amd.com/raw
-        0000-v6-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-6-Bin.Du@amd.com/raw
-        0000-v6-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-7-Bin.Du@amd.com/raw
-        0000-v6-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://lore.kernel.org/lkml/20251128091929.165272-8-Bin.Du@amd.com/raw
+        # https://www.phoronix.com/news/AMD-ISP4-Driver-Linux-v7
+        0000-v7-1-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-2-Bin.Du@amd.com/mbox
+        0000-v7-2-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-3-Bin.Du@amd.com/mbox
+        0000-v7-3-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-4-Bin.Du@amd.com/mbox
+        0000-v7-4-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-5-Bin.Du@amd.com/mbox
+        0000-v7-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-6-Bin.Du@amd.com/mbox
+        0000-v7-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-7-Bin.Du@amd.com/mbox
+        0000-v7-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-8-Bin.Du@amd.com/mbox
         #iwlwifi: Fix firmware version handling
         0000-iwlwifi-fix.patch::https://bugzilla.kernel.org/attachment.cgi?id=309024
 )
@@ -128,7 +128,6 @@ fi
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '663e2368702ea2edaceec166c2c5f11e41d332349415d6dc45082be6de75709e'
             'e895a85bde85e4eff4f471cf793ecb3494d0fd70e0aa0211438db042be826846'
-            #'30b9a75e7b9026928fed212c303567d287e26eb0e6ade99689c8b21c56f23d84'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'
@@ -137,11 +136,7 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '160d500954014fd3ebe75b3cac836f75423df7fbcf0390a7198701e47301245f'
             'a9803ab6cd82324c7d67711e9a7155e5642d4f9652a4ebdddb0eb0ebdbe40aa0'
-            #'d89c1ee441542921a12afc9eb564e04139ff12a39de59e8ea39208a7e1e7be22'
             '60d48a427659d05babda74f496cf1c938315ee911bb440625a717807a8dc057d'
-            #'4a17b48d6653b6fc70caa02e3b248e040e0692c12aecaf20e76279b23e6045e3'
-            #'ed121a3f1b8e7291cf01e008a9064452013959a4b09136c60d1d8ec8437c42c1'
-            #'579f1c24eb3674dc1b03176274b4cce5a12cfce5c0e5214b978a72536cc683da'
             '51283be0fa67ff51011f8798917bd48fd8d2937fa775cbc948a063945e9629b3'
             '2f159d7f0b6ca0c331a72275cd89bfae78e6e30d84786072918d39e4f2ef6b21'
             '4e8b07b2ce6b5fbbba48e5c30cd88a492d55dcc2c4a27d2023bc5d7144d8096b'
@@ -180,13 +175,13 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            'a158a6c9a7898b81aae1f1bfc92509271ddd46f75e57a5ea8ba04d32cd976d92'
-            'f78000f07b52acd1e11cd353240f879a14e9574a7e4914a0559294d3821cccb6'
-            '47b872f7ad75a351f961ecceb3fedeed1b0989db7ead10f923fae261736581ad'
-            'a86fd5deed832be3a850945fa14e5a103d5035518d818be63afb95355209ac1e'
-            '1bba9d30cbbdd0880a0241f95738cab40bc598cfdffbb9ad8b41c779c5f548f2'
-            'd19c590a9a58f8bb00eefc4abfe35fe8c539ee1090a3c1417727f42a8f435cd2'
-            '163418089f04d4a25557b3f0af02830722b74cb29d0c9dc06349df90c2518742'
+            'a89c211362adf13dd86bfff94bdaed1adc39f946a056674f3ca470d974fb7fbf'
+            'e7fea8ff4fc5964733f36c79e47343e56c3c80843a51bf307952ab74b21d8547'
+            'c76af0931ef19411bd09834f579741bb8bf6bc18dc80db10562c9e7d82b4b417'
+            '0ad5b49e25686c9e1939f0b233795f254c767714382736223d2e9132c7fa8c05'
+            'fa5692766599470f297c78a84f9ea6a97262e87b0961ecebbe5d1b31bfd92a39'
+            'c5103d434cb981bfdd51e5e714a6a57fd7740d594c17dd23ea4c12885112e870'
+            'b4d4c65b1e3adbb753b04d4ac8ae720670f132b3cf2bce060c398d8d4254bfc3'
             '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4')
 
 export KBUILD_BUILD_HOST=manjaro

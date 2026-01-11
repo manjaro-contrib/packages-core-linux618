@@ -95,6 +95,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0030-asus-wmi-fixup-screenpad-brightness.patch
         # OrangePi Neo patches
         0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
+        0001-iio-bmi270_i2c-Add-MODULE_DEVICE_TABLE-for-BMI260-270.patch::https://lore.kernel.org/stable/20260106054519.566796-1-derekjohn.clark@gmail.com/raw
         # Zotac Zone patches
         0001-zotac-zone-hid-initial-impl.patch
         0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch
@@ -169,19 +170,20 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '8e6f050f3e176e7076d0f11375be55b07689d599c37ddb406c7494ea54232247'
             'e332e8137eec1f74e8cdfe27baad2a738620ef3498bca19be9c934044de0fa78'
             '14278fdc353e6ab5abc9c1a6b753221df12c9a0e6a8d9fec8baf81d7897a6a4b'
+            'c7f9a1d8a7decaa1667186209859e84ef5ee9179c08868d6dfcf41c55c999de1'
             'b67f25c13e946b51712b0e828ebbf8bea980d339bd6effab17869f6a62e428df'
             'c30d45e2ccde056b277246321040164f70db8adb8b8335a2fbdd4a2bf74b97cf'
             '138684588665b8f651dffb4e75c265a2b81f6bd7a606f75f8fc6814a4a63d3fd'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            '99fb22056a92fcaefd9635cdb771771e909246ed0f99fae389bdf5fa8ff544fa'
-            '4f0fd334640ff390f6023bc5c3396c2bf941ae308f4e25a92e515231192f7433'
-            'fa2ca89e270f58e2f1b795edf4f1fd760960ae73066402e05d3f1bb6614df31d'
-            '2e3b9d9de0b9b91a0d19a44a98aa7c9a3ad3e82ccc101de6927cece79d79f24b'
-            '408d78e2fb56b0328f83f35508287fc6f59a3f814c94588d7085ce2dbef14789'
-            '5bcd337d6da6ea87a20de6c63099dd89a460b733adb79dbcb9abca2b062112ab'
-            '0709fd734494614734e63242272b9a23bddc9a43bf7d7f98aab7afd490c8fb78'
+            'a89c211362adf13dd86bfff94bdaed1adc39f946a056674f3ca470d974fb7fbf'
+            'e7fea8ff4fc5964733f36c79e47343e56c3c80843a51bf307952ab74b21d8547'
+            'c76af0931ef19411bd09834f579741bb8bf6bc18dc80db10562c9e7d82b4b417'
+            '0ad5b49e25686c9e1939f0b233795f254c767714382736223d2e9132c7fa8c05'
+            'fa5692766599470f297c78a84f9ea6a97262e87b0961ecebbe5d1b31bfd92a39'
+            'c5103d434cb981bfdd51e5e714a6a57fd7740d594c17dd23ea4c12885112e870'
+            'b4d4c65b1e3adbb753b04d4ac8ae720670f132b3cf2bce060c398d8d4254bfc3'
             '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4')
 
 export KBUILD_BUILD_HOST=manjaro

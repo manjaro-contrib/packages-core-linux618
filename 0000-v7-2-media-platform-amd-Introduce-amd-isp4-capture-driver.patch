@@ -1,34 +1,22 @@
-From nobody Sat Jan 10 17:13:00 2026
-Received: from SN4PR2101CU001.outbound.protection.outlook.com
- (mail-southcentralusazon11012002.outbound.protection.outlook.com
- [40.93.195.2])
+From mboxrd@z Thu Jan  1 00:00:00 1970
+Received: from SN4PR2101CU001.outbound.protection.outlook.com (mail-southcentralusazon11012002.outbound.protection.outlook.com [40.93.195.2])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
 	by smtp.subspace.kernel.org (Postfix) with ESMTPS id E81BB33A6F3;
 	Tue, 16 Dec 2025 09:14:04 +0000 (UTC)
-Authentication-Results: smtp.subspace.kernel.org;
- arc=fail smtp.client-ip=40.93.195.2
-ARC-Seal: i=2; a=rsa-sha256; d=subspace.kernel.org; s=arc-20240116;
-	t=1765876448; cv=fail;
- b=jECS3dEdUv55/VPI3TcIm/SqeuUPW/4Jn1jJJjJJepxGSOliJKwtkKvYEPcGAwo3rU4P7OdmyxsOc6N1mDeFwYXvnBZNVX6STZBhdjWROYolUbgSv6d8LAcHqWR2Rdlfa8YYB9hxRUNs8QDPR/Fn262qVf/4FTxkKmiUqxZT3dk=
-ARC-Message-Signature: i=2; a=rsa-sha256; d=subspace.kernel.org;
+Authentication-Results: smtp.subspace.kernel.org; arc=fail smtp.client-ip=40.93.195.2
+ARC-Seal:i=2; a=rsa-sha256; d=subspace.kernel.org; s=arc-20240116;
+	t=1765876448; cv=fail; b=jECS3dEdUv55/VPI3TcIm/SqeuUPW/4Jn1jJJjJJepxGSOliJKwtkKvYEPcGAwo3rU4P7OdmyxsOc6N1mDeFwYXvnBZNVX6STZBhdjWROYolUbgSv6d8LAcHqWR2Rdlfa8YYB9hxRUNs8QDPR/Fn262qVf/4FTxkKmiUqxZT3dk=
+ARC-Message-Signature:i=2; a=rsa-sha256; d=subspace.kernel.org;
 	s=arc-20240116; t=1765876448; c=relaxed/simple;
 	bh=5lWfIEzjt8h2bU8HEy2XOUtMm31BRlL9ZtO9T0nfNCo=;
 	h=From:To:CC:Subject:Date:Message-ID:In-Reply-To:References:
-	 MIME-Version:Content-Type;
- b=ddXXsmkKuxOIcDIkXieQ6pXf6V6MwQx46BLqNHFNosh4pnLizmFOXirHVdMSULBYq43HsX9Axp9ywVw32U6wTKXI5ZOnPHwJkYc6yBIR/Jl95ov661Ne+rs3c6x0iN4AW2Rj9GiSvAgpq4JX0dw5TNbvEu9ltYgXo0s6yvlkk60=
-ARC-Authentication-Results: i=2; smtp.subspace.kernel.org;
- dmarc=pass (p=quarantine dis=none) header.from=amd.com;
- spf=fail smtp.mailfrom=amd.com;
- dkim=pass (1024-bit key) header.d=amd.com header.i=@amd.com
- header.b=Q4QQEgtd; arc=fail smtp.client-ip=40.93.195.2
+	 MIME-Version:Content-Type; b=ddXXsmkKuxOIcDIkXieQ6pXf6V6MwQx46BLqNHFNosh4pnLizmFOXirHVdMSULBYq43HsX9Axp9ywVw32U6wTKXI5ZOnPHwJkYc6yBIR/Jl95ov661Ne+rs3c6x0iN4AW2Rj9GiSvAgpq4JX0dw5TNbvEu9ltYgXo0s6yvlkk60=
+ARC-Authentication-Results:i=2; smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=amd.com; spf=fail smtp.mailfrom=amd.com; dkim=pass (1024-bit key) header.d=amd.com header.i=@amd.com header.b=Q4QQEgtd; arc=fail smtp.client-ip=40.93.195.2
+Authentication-Results: smtp.subspace.kernel.org; dmarc=pass (p=quarantine dis=none) header.from=amd.com
+Authentication-Results: smtp.subspace.kernel.org; spf=fail smtp.mailfrom=amd.com
 Authentication-Results: smtp.subspace.kernel.org;
- dmarc=pass (p=quarantine dis=none) header.from=amd.com
-Authentication-Results: smtp.subspace.kernel.org;
- spf=fail smtp.mailfrom=amd.com
-Authentication-Results: smtp.subspace.kernel.org;
-	dkim=pass (1024-bit key) header.d=amd.com header.i=@amd.com
- header.b="Q4QQEgtd"
+	dkim=pass (1024-bit key) header.d=amd.com header.i=@amd.com header.b="Q4QQEgtd"
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none;
  b=UwXJBH+0EM91bJ8EWUtmXvrO0Nf2xi1RrSHAers1fdr1fnb9hVlvgcQazjYOaSPNRqMJLYKRULW9BwtLOGD3V96xFB28F6NUZ7dqm9xlvtvJzjN4ljfx6vKJPHZDJli+0Eb4S3RXYnDAa0zydl7H+jjio7lstW0AVjHRoezDKCIXTsvisXDywXj8t77rjTo0dSLSiZaWNfitxXTDLpbjEe04dSgN7hfapXN7Ig39Gm+qGEazPJa3ijLJbzeooXpl86/+ClHXXud8d4n4Tbzy8UX5RcFnqs4bH2OCDUpHPNXBPXBCkk+ZcmbsfKeUsMA1wQjctXPhmYVeIuWQPKqJYg==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
@@ -80,8 +68,7 @@ CC: <pratap.nirujogi@amd.com>, <benjamin.chan@amd.com>, <king.li@amd.com>,
 	<richard.gong@amd.com>, <anson.tsao@amd.com>, <bin.du@amd.com>, Bin Du
 	<Bin.Du@amd.com>, Svetoslav Stoilov <Svetoslav.Stoilov@amd.com>, "Alexey
  Zagorodnikov" <xglooom@gmail.com>
-Subject: [PATCH v7 2/7] media: platform: amd: low level support for isp4
- firmware
+Subject: [PATCH v7 2/7] media: platform: amd: low level support for isp4 firmware
 Date: Tue, 16 Dec 2025 17:13:21 +0800
 Message-ID: <20251216091326.111977-3-Bin.Du@amd.com>
 X-Mailer: git-send-email 2.34.1
@@ -93,7 +80,8 @@ List-Id: <linux-kernel.vger.kernel.org>
 List-Subscribe: <mailto:linux-kernel+subscribe@vger.kernel.org>
 List-Unsubscribe: <mailto:linux-kernel+unsubscribe@vger.kernel.org>
 MIME-Version: 1.0
-Content-Transfer-Encoding: quoted-printable
+Content-Transfer-Encoding: 8bit
+Content-Type: text/plain
 X-ClientProxiedBy: satlexmb08.amd.com (10.181.42.217) To satlexmb07.amd.com
  (10.181.42.216)
 X-EOPAttributedMessage: 0
@@ -102,9 +90,9 @@ X-MS-TrafficTypeDiagnostic: SA2PEPF00003AE8:EE_|PH8PR12MB8429:EE_
 X-MS-Office365-Filtering-Correlation-Id: d6b57fac-9408-4ecf-d703-08de3c837339
 X-MS-Exchange-SenderADCheck: 1
 X-MS-Exchange-AntiSpam-Relay: 0
-X-Microsoft-Antispam: 
+X-Microsoft-Antispam:
 	BCL:0;ARA:13230040|1800799024|82310400026|376014|7416014|36860700013;
-X-Microsoft-Antispam-Message-Info: 
+X-Microsoft-Antispam-Message-Info:
 	=?us-ascii?Q?shV2yCTHqpl9kU+wYmmEzlc9iswj6D7nNZPYaqVwIw91nZgPRDbSL0Vfkp/g?=
  =?us-ascii?Q?bwZpmbUDfWKkRSZ2rJoLOorZmNdfVXqlNLWC7Ztag1RLYUaiSkcRA5az6Dl0?=
  =?us-ascii?Q?eQQN3gFW5MOxwKHUQpUK8eOwk8lgnG7XHBCngRbisre6dQNVH7WuSPA7egLH?=
@@ -132,22 +120,19 @@ X-Microsoft-Antispam-Message-Info:
  =?us-ascii?Q?TXQF2GxnC+AJt2LQYrT+E4oMpfBsfFi8jYjoEc/eRSDZvJ/XkCKTQ6cHqK/d?=
  =?us-ascii?Q?31oocSnpTZayIDfn5H7if5ZEamyGkNGBV/JO9GMYiKwuP4iDWwK+tG6NVO0h?=
  =?us-ascii?Q?lcsavuZ7dIoYehk96tE=3D?=
-X-Forefront-Antispam-Report: 
+X-Forefront-Antispam-Report:
 	CIP:165.204.84.17;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:satlexmb07.amd.com;PTR:InfoDomainNonexistent;CAT:NONE;SFS:(13230040)(1800799024)(82310400026)(376014)(7416014)(36860700013);DIR:OUT;SFP:1101;
 X-OriginatorOrg: amd.com
 X-MS-Exchange-CrossTenant-OriginalArrivalTime: 16 Dec 2025 09:14:00.4079
  (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 
- d6b57fac-9408-4ecf-d703-08de3c837339
+X-MS-Exchange-CrossTenant-Network-Message-Id: d6b57fac-9408-4ecf-d703-08de3c837339
 X-MS-Exchange-CrossTenant-Id: 3dd8961f-e488-4e60-8e11-a82d994e183d
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: 
- TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
-X-MS-Exchange-CrossTenant-AuthSource: 
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=3dd8961f-e488-4e60-8e11-a82d994e183d;Ip=[165.204.84.17];Helo=[satlexmb07.amd.com]
+X-MS-Exchange-CrossTenant-AuthSource:
 	SA2PEPF00003AE8.namprd02.prod.outlook.com
 X-MS-Exchange-CrossTenant-AuthAs: Anonymous
 X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: PH8PR12MB8429
-Content-Type: text/plain; charset="utf-8"
 
 Low level functions for accessing the registers and mapping to their
 ranges. This change also includes register definitions for ring buffer
@@ -174,11 +159,10 @@ index 3640a1e3262c..7aa17c7e71d6 100644
  F:	drivers/media/platform/amd/isp4/isp4.c
  F:	drivers/media/platform/amd/isp4/isp4.h
 +F:	drivers/media/platform/amd/isp4/isp4_hw_reg.h
-=20
+ 
  AMD KFD
  M:	Felix Kuehling <Felix.Kuehling@amd.com>
-diff --git a/drivers/media/platform/amd/isp4/isp4_hw_reg.h b/drivers/media/=
-platform/amd/isp4/isp4_hw_reg.h
+diff --git a/drivers/media/platform/amd/isp4/isp4_hw_reg.h b/drivers/media/platform/amd/isp4/isp4_hw_reg.h
 new file mode 100644
 index 000000000000..09c76f75c5ee
 --- /dev/null
@@ -308,5 +292,8 @@ index 000000000000..09c76f75c5ee
 +}
 +
 +#endif /* _ISP4_HW_REG_H_ */
---=20
+-- 
 2.34.1
+
+
+

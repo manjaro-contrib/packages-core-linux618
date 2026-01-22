@@ -89,7 +89,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0029-ally-tmp-remapping.patch
         0030-asus-wmi-fixup-screenpad-brightness.patch
         # OrangePi Neo patches
-        0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
+        #0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
         0001-iio-bmi270_i2c-Add-MODULE_DEVICE_TABLE-for-BMI260-270.patch::https://lore.kernel.org/stable/20260106054519.566796-1-derekjohn.clark@gmail.com/raw
         # Zotac Zone patches
         0001-zotac-zone-hid-initial-impl.patch
@@ -123,7 +123,7 @@ fi
 
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'ab6de5700df66b47cbb12f335d04658a837b7c49577ed919b08108b1dd6db6b8'
-            'e895a85bde85e4eff4f471cf793ecb3494d0fd70e0aa0211438db042be826846'
+            'd100f41d2bd3e759cbf2a76fd56146b09eea7753fde05518d68966aa464a3e9d'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'
@@ -162,7 +162,6 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '9bafa4955c27d3668d3827e3fbd9aad00195f581d3b5c9f37a4059420e504a1d'
             '8e6f050f3e176e7076d0f11375be55b07689d599c37ddb406c7494ea54232247'
             'e332e8137eec1f74e8cdfe27baad2a738620ef3498bca19be9c934044de0fa78'
-            '14278fdc353e6ab5abc9c1a6b753221df12c9a0e6a8d9fec8baf81d7897a6a4b'
             'c7f9a1d8a7decaa1667186209859e84ef5ee9179c08868d6dfcf41c55c999de1'
             'b67f25c13e946b51712b0e828ebbf8bea980d339bd6effab17869f6a62e428df'
             'c30d45e2ccde056b277246321040164f70db8adb8b8335a2fbdd4a2bf74b97cf'

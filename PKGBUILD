@@ -55,7 +55,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0003-drm-amdgpu-avoid-memory-allocation-in-the-critical-code-path-v3.patch::https://github.com/archlinux/linux/commit/127e151c7545f8ce65145cf9d57c737378532bc5.patch
         0004-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-critical-path.patch::https://github.com/archlinux/linux/commit/be28c52ced30ac099f3337788fbd3d2e20ffc3f9.patch
         #0005-drm-amdgpu-dont-attach-the-tlb-fence-for-SI.patch::https://github.com/archlinux/linux/commit/45d070266c871a170c81b6d4b837a6b06f5ffd1b.patch
-        0006-xfrm-Fix-inner-mode-lookup-in-tunnel-mode-GSO-segmentation.patch::https://github.com/archlinux/linux/commit/ed0e6d0a1b9a9efb2509691ce314cabd17c90eaf.patch
+        #0006-xfrm-Fix-inner-mode-lookup-in-tunnel-mode-GSO-segmentation.patch::https://github.com/archlinux/linux/commit/ed0e6d0a1b9a9efb2509691ce314cabd17c90eaf.patch
         0012-rust_binder-correctly-handle-FDA-objects-of-length-zero.patch::https://github.com/archlinux/linux/commit/0fdf41d504a1f9fa5800917de40aca8d3054e81f.patch
         # Manjaro Patches
         # Realtek patch
@@ -132,7 +132,7 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '160d500954014fd3ebe75b3cac836f75423df7fbcf0390a7198701e47301245f'
             'a9803ab6cd82324c7d67711e9a7155e5642d4f9652a4ebdddb0eb0ebdbe40aa0'
-            '60d48a427659d05babda74f496cf1c938315ee911bb440625a717807a8dc057d'
+            #'60d48a427659d05babda74f496cf1c938315ee911bb440625a717807a8dc057d'
             '4e8b07b2ce6b5fbbba48e5c30cd88a492d55dcc2c4a27d2023bc5d7144d8096b'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
             'e5671d5f6fe27c072397efeedb876912d52e104488baa8cd149727ff0814e657'

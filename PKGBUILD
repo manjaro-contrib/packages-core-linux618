@@ -49,13 +49,13 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0000-amd-display-move-AMD_PRIVATE_COLOR-to-Kconfig.patch
         # From Valve for Upstream (fixes suspend on deck target in inputplumber)
         0000-usb-vhci-hcd-Unconditionally-allow-system-suspend.patch
+        # https://lore.kernel.org/platform-driver-x86/20260121143519.12318-1-xglooom@gmail.com/
+        0000-platform-x86-amd-pmf-Added-a-module-parameter-to-disable-the-Smart-PC-function.patch
         # ARCH Patches
         0001-add-sysctl-to-disallow-unprivileged-CLONE_NEWUSER-by.patch
         0002-drivers-firmware-skip-simpledrm-if-nvidia-drm.modese.patch
         0003-drm-amdgpu-avoid-memory-allocation-in-the-critical-code-path-v3.patch::https://github.com/archlinux/linux/commit/127e151c7545f8ce65145cf9d57c737378532bc5.patch
         0004-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-critical-path.patch::https://github.com/archlinux/linux/commit/be28c52ced30ac099f3337788fbd3d2e20ffc3f9.patch
-        #0005-drm-amdgpu-dont-attach-the-tlb-fence-for-SI.patch::https://github.com/archlinux/linux/commit/45d070266c871a170c81b6d4b837a6b06f5ffd1b.patch
-        #0006-xfrm-Fix-inner-mode-lookup-in-tunnel-mode-GSO-segmentation.patch::https://github.com/archlinux/linux/commit/ed0e6d0a1b9a9efb2509691ce314cabd17c90eaf.patch
         0012-rust_binder-correctly-handle-FDA-objects-of-length-zero.patch::https://github.com/archlinux/linux/commit/0fdf41d504a1f9fa5800917de40aca8d3054e81f.patch
         # Manjaro Patches
         # Realtek patch
@@ -128,6 +128,7 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'
             '512032c6b93fce24254da6cace7bf101c8f7c824761a0f99deed4b7724ac6f3e'
+            'e69ef2aa501334a5b7975e14a1f105e7d67b19a02ee89563ac9a54a462ba94c7'
             'e5e98d62b63704cecdf32dbe6a9bafea6e70b23fa8e01fe96ca220ac6036392e'
             'c21170eba77438abb8b8ab02aeccf16bfb2467a01303509945aa6b3a0fd16d31'
             '160d500954014fd3ebe75b3cac836f75423df7fbcf0390a7198701e47301245f'

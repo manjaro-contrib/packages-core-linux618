@@ -272,6 +272,7 @@ _package() {
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the Linux $_basekernel kernel"
   depends=(pahole)
+  provides=("linux-headers=$pkgver")
 
   cd $_srcdir
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"

@@ -56,7 +56,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0002-drivers-firmware-skip-simpledrm-if-nvidia-drm.modese.patch
         0003-drm-amdgpu-avoid-memory-allocation-in-the-critical-code-path-v3.patch::https://github.com/archlinux/linux/commit/127e151c7545f8ce65145cf9d57c737378532bc5.patch
         0004-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-critical-path.patch::https://github.com/archlinux/linux/commit/be28c52ced30ac099f3337788fbd3d2e20ffc3f9.patch
-        0012-rust_binder-correctly-handle-FDA-objects-of-length-zero.patch::https://github.com/archlinux/linux/commit/0fdf41d504a1f9fa5800917de40aca8d3054e81f.patch
         # Manjaro Patches
         # Realtek patch
         0999-patch_realtek.patch

@@ -6579,7 +6579,7 @@ CONFIG_VIDEO_MEM2MEM_DEINTERLACE=m
 #
 # Allegro DVT media platform drivers
 #
-CONFIG_AMD_ISP4=m
+CONFIG_VIDEO_AMD_ISP4_CAPTURE=m
 
 #
 # Amlogic media platform drivers

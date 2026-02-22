@@ -100,14 +100,30 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # Lenovo Legion Go S
         0000-HID-Add-Legion-Go-S-Driver.patch::https://patchwork.kernel.org/series/978420/mbox/
         # AMD patches
-        # https://www.phoronix.com/news/AMD-ISP4-Driver-Linux-v7
-        0000-v7-1-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-2-Bin.Du@amd.com/mbox
-        0000-v7-2-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-3-Bin.Du@amd.com/mbox
-        0000-v7-3-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-4-Bin.Du@amd.com/mbox
-        0000-v7-4-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-5-Bin.Du@amd.com/mbox
-        0000-v7-5-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-6-Bin.Du@amd.com/mbox
-        0000-v7-6-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-7-Bin.Du@amd.com/mbox
-        0000-v7-7-media-platform-amd-Introduce-amd-isp4-capture-driver.patch::https://patchew.org/linux/20251216091326.111977-8-Bin.Du@amd.com/mbox
+        # [PATCH v8] Add AMD ISP4 driver
+        # https://patchew.org/linux/20260212083426.216430-1-Bin.Du@amd.com/
+        0001-media-platform-amd-Introduce-amd-isp4-capture-driver.patch
+        0002-media-platform-amd-low-level-support-for-isp4-firmware.patch
+        0003-media-platform-amd-Add-isp4-fw-and-hw-interface.patch
+        0004-media-platform-amd-isp4-subdev-and-firmware-loading-handling-added.patch
+        0005-media-platform-amd-isp4-video-node-and-buffers-handling-added.patch
+        0006-media-platform-amd-isp4-debug-fs-logging-and-more-descriptive-errors.patch
+        0007-Documentation-add-documentation-of-AMD-isp-4-driver.patch
+        # Add MT7902 driver
+        # https://github.com/nbd168/wireless/commit/4eefc435c985f4dfdba9afb1c705f0e17377c084
+        0000-wifi-mt76-mt7921-Replace-deprecated-PCI-function.patch
+        # https://lore.kernel.org/linux-wireless/20260219004007.19733-1-sean.wang@kernel.org
+        0001-wifi-mt76-connac-use-is_connac2-to-replace-is_mt7921-checks.patch
+        0002-wifi-mt76-mt7921-use-mt76_for_each_q_rx-in-reset-path.patch
+        0003-wifi-mt76-mt7921-handle-MT7902-irq_map-quirk-with-mutable-copy.patch
+        0004-wifi-mt76-mt7921-add-MT7902e-DMA-layout-support.patch
+        0005-wifi-mt76-connac-mark-MT7902-as-hw-txp-devices.patch
+        0006-wifi-mt76-mt792x-add-PSE-handling-barrier-for-the-large-MCU-cmd.patch
+        0007-wifi-mt76-mt792x-ensure-MCU-ready-before-ROM-patch-download.patch
+        0008-wifi-mt76-mt7921-add-MT7902-MCU-support.patch
+        0009-wifi-mt76-mt792x-add-MT7902-WFDMA-prefetch-configuration.patch
+        0010-wifi-mt76-mt7921-add-MT7902-PCIe-device-support.patch
+        0011-wifi-mt76-mt7921-add-MT7902-SDIO-device-support.patch
         #iwlwifi: Fix firmware version handling
         0000-iwlwifi-fix.patch::https://bugzilla.kernel.org/attachment.cgi?id=309024
 )
@@ -167,13 +183,25 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '3d37e1f54290bad1b7a4c5c45046341dc4c1bfc2f8648b7754bf0bd9705b3a35'
             'f8cf8ad3e17857b51c3f7dd954eb5ac7ba44bfe0302a40e70b2c496573407edf'
             'adbb2ad0ea9a3e1591131af5fb4380aeeac27172be5c6faade459514e28c071a'
-            '7c8c39f3635fa0746fbf56e417ece108804f84da77a7e4f9a621d04c6ddea91b'
-            '1267a7dad8039ba9b03f8aa0cb4bf7e772379cb69aa293bc10c237ddcf26326e'
-            'c0e9e495f211ea6307f4cfeed4e92d6e7fb46e589de907e74dae66e33015858d'
-            '0b58f72a541766452ba1e4e59703a3dc11df02f0d5be9f3269a99491aa5cff40'
-            '0605a69b55889d2021b330e5e922e6d9a5a71fef612397df09f529b845b1f896'
-            'a9d24e0033eb73ee50e5a29cdf7e141074f60ac19ff8ee00fbc7ba6496c10983'
-            '06f52a344c4f06a2d1b72f0d99ec804c6c5891b023d95415a4fa3c7964ed293d'
+            '25bb7bbbba3b3dd55134cc42b651c7b1db24185ad9fafe2134a506303f14612c'
+            '011da142f4e914799d1d91db9c8c5ca8cda087af863e081e044052103d6d8fa2'
+            '35da2519290a33f8fac3aabdb0df23cfbbf2c3361d54891d0c8105e6f3e585c0'
+            '66cb551ba71b6f725e62a48d7393e39b959f7674182eb440a298a80eed1ae688'
+            'c512b612c3e84425d9f821654db099654bc291e7fc31b97bfa76d62c6c47f8b3'
+            '203b232c4ffd7ff4e6a4fd43dc1585d79fc4ea272204cfc519da4c8bb8849b55'
+            '583d393867172206356236171e15502d5b9cfc398e611fc1a706a9cd34c2b15a'
+            '3fe7ca8c5eeb3f5c5ff578e1f04b17c2b798d08bc558dffe0f2bfdf716db7741'
+            'bda8e95f3091068f18bc58832d21c6891141e9c2f554bb22abe40d2b7651c5f5'
+            '0ae19158cdfc2aca0ff274fcb85cc7541d44edacb4bd58911a72739f1c1f8e0d'
+            'ef22c2a776d2d9ef0685888f179b7814137e025977eecf71b7650c60bfe45cdf'
+            '3711ad653e5552049371ec688597fe43acbc6ea8ab154c806c4cbc47a2ed55c0'
+            '291298e484ff1775a6d221e5e5b058d080c66e702c7b2d45969f0f152a3770c0'
+            '5b07cf2b23388c149d778e73af5042dd7fce72e623ca79c81694049f7a4202b5'
+            '33c2e94eff26fa875e88165d4a168bfacda0e3d256abe5b3044881501f23fe9b'
+            '757330d80892a9cff8b312db0079b6c196dea6c096a58568d3c722b76d532317'
+            'b01f6a9dc20f5c9c5b3206113f1df98b8c0d8d68dd20b725bd9caf78471cf3e1'
+            '23b641b91d30d6f0a4515cb1d608daa73f9f7bc82c2eeabb4fa5ea17dbc4812f'
+            'ddb77ab57b356f7d06a76cba466a36960b68d465882c7e6932d9aad2079d0642'
             '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4')
 
 export KBUILD_BUILD_HOST=manjaro

@@ -126,6 +126,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0011-wifi-mt76-mt7921-add-MT7902-SDIO-device-support.patch
         #iwlwifi: Fix firmware version handling
         0000-iwlwifi-fix.patch::https://bugzilla.kernel.org/attachment.cgi?id=309024
+        #iwlwifi: Fix iwlvmvm set TX rates
+        0001-BUGFIX-wifi-iwlwifi-mvm-fix-driver-set-TX-rates-on-o.patch::https://bugzilla.kernel.org/attachment.cgi?id=309443
 )
 
 if [[ ! -z "$_commit" ]]; then
@@ -202,7 +204,8 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'b01f6a9dc20f5c9c5b3206113f1df98b8c0d8d68dd20b725bd9caf78471cf3e1'
             '23b641b91d30d6f0a4515cb1d608daa73f9f7bc82c2eeabb4fa5ea17dbc4812f'
             'ddb77ab57b356f7d06a76cba466a36960b68d465882c7e6932d9aad2079d0642'
-            '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4')
+            '9628a67ac23beaf2de7194d2934386944adc64cb2a4a90e4c38b867b868654b4'
+            'eb1af81b61140b7b54ffe4b65c3614dce0d239137c5679a6f258f59fe1190b1c')
 
 export KBUILD_BUILD_HOST=manjaro
 export KBUILD_BUILD_USER=$pkgbase

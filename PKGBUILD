@@ -10,8 +10,8 @@ _kernelname=-MANJARO
 _commit=
 _rc=
 pkgbase=linux${_basever}
-pkgver=6.18.27
-pkgrel=2
+pkgver=6.18.28
+pkgrel=1
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -43,8 +43,6 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # Security Patches
         # https://www.openwall.com/lists/oss-security/2026/05/07/8
         # https://github.com/V4bel/dirtyfrag
-        # https://git.kernel.org/pub/scm/linux/kernel/git/netdev/net.git/commit/?id=f4c50a4034e62ab75f1d5cdd191dd5f9c77fdff4
-        0001-dirty-frag-f4c50a4034e6.patch
         # https://lore.kernel.org/all/afKV2zGR6rrelPC7@v4bel/
         0002-dirty-frag-rxrpc-fix-from-netdev-list.patch
         # Upstream Patches
@@ -141,9 +139,8 @@ else
 fi
 
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
-            '1d74406decf73fd0fb365b0e807fec8bc1e1d464e17f59438779f49da189cfae'
+            '335094a107cfee7c546a036f724c95a251745802cdab3b503c5cf878c7ee5539'
             '1d4ce5c5cfb7ccf586600dd643ebc0e6a0a6df85b94c72b1e827f08f702b5775'
-            'b4b020673007a29892fff59825890031c4e064c9d6542e6c1d5f14ac85f9e7f1'
             '274e2ae283de9382525a18d084f399d1fa4fca7db4b5f8d9dc134f246c8abc8a'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'

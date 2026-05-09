@@ -11,7 +11,7 @@ _commit=
 _rc=
 pkgbase=linux${_basever}
 pkgver=6.18.28
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -41,10 +41,12 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         https://www.kernel.org/pub/linux/kernel/v6.x/patch-${pkgver}.xz
         config
         # Security Patches
+        # Dirty Frag / Copy Fail 2: Electric Boogaloo (CVE-2026-43284, CVE-2026-43500)
         # https://www.openwall.com/lists/oss-security/2026/05/07/8
         # https://github.com/V4bel/dirtyfrag
         # https://lore.kernel.org/all/afKV2zGR6rrelPC7@v4bel/
-        0002-dirty-frag-rxrpc-fix-from-netdev-list.patch
+        # https://lore.kernel.org/all/af2kdW2F1gJ9U-Gg@v4bel/
+        0001-dirty-frag-rxrpc-fix-from-netdev-list.patch
         # Upstream Patches
         #0000-drm-amd-Skip-power-ungate-during-suspend-for-VPE.patch::https://lore.kernel.org/stable/20251130014631.29755-1-superm1@kernel.org/raw
         0000-drm-amdgpu-fix-race-condition-in-amdgpu_vm_wait_idle-during-process-kill.patch::https://lore.kernel.org/all/20250807084655.1597669-1-Tong.Liu01@amd.com/raw
@@ -141,7 +143,7 @@ fi
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '335094a107cfee7c546a036f724c95a251745802cdab3b503c5cf878c7ee5539'
             '1d4ce5c5cfb7ccf586600dd643ebc0e6a0a6df85b94c72b1e827f08f702b5775'
-            '274e2ae283de9382525a18d084f399d1fa4fca7db4b5f8d9dc134f246c8abc8a'
+            '36ed6b950f67c247d6f3d839ac40b0614cd5f5a42e6332a1431e6ea32605fe49'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'

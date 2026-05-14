@@ -47,10 +47,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # https://lore.kernel.org/all/afKV2zGR6rrelPC7@v4bel/
         # https://lore.kernel.org/all/af2kdW2F1gJ9U-Gg@v4bel/
         # https://lore.kernel.org/all/agDTmXM2wXnJflYc@v4bel/
-        # https://lore.kernel.org/all/177877877003.17572.12084366985884137835.git-patchwork-notify@kernel.org/
         0001-dirty-frag-rxrpc-fix-from-netdev-list.patch
-        0002-dirty-frag-rxrpc-fix-from-netdev-list.patch
-        0003-dirty-frag-rxrpc-fix-from-netdev-list.patch
         # Upstream Patches
         #0000-drm-amd-Skip-power-ungate-during-suspend-for-VPE.patch::https://lore.kernel.org/stable/20251130014631.29755-1-superm1@kernel.org/raw
         0000-drm-amdgpu-fix-race-condition-in-amdgpu_vm_wait_idle-during-process-kill.patch::https://lore.kernel.org/all/20250807084655.1597669-1-Tong.Liu01@amd.com/raw
@@ -147,9 +144,7 @@ fi
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '15c339e4c89f9d083cb078b5ce554d290658d582d30fcda96e621d9d9d3384ef'
             '1d4ce5c5cfb7ccf586600dd643ebc0e6a0a6df85b94c72b1e827f08f702b5775'
-            '2c91b64426e6468af1f042737f1928c8f97ff151e3c3845df9da362d15ad6182'
-            '54b949795176bd322100ff528dab7ce5316310deec82ced62d8c6971865b6ca0'
-            '86a098979a2fc8499ec6f1c37ebed7e87cdc28f545a0478cead5afe78ea6e880'
+            '87042ca91c31e1dd63a7845a42a72bde9c65bf87e45d276c3af04599965726a4'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'

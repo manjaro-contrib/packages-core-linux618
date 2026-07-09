@@ -1,8 +1,6 @@
-# Maintainer: Bernhard Landauer <bernhard@manjaro.org>
 # Maintainer: Philip Müller <philm[at]manjaro[dot]org>
-# Archlinux maintainers:
-# Tobias Powalowski <tpowa@archlinux.org>
-# Thomas Baechler <thomas@archlinux.org>
+# Contributor: Bernhard Landauer <bernhard@manjaro.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 _basekernel=6.18
 _basever=${_basekernel//.}
@@ -17,9 +15,13 @@ url="https://www.kernel.org/"
 license=(GPL-2.0-only)
 makedepends=(
   bc
+  binutils
   cpio
   gettext
+  glibc
   libelf
+  libgcc
+  openssl
   pahole
   perl
   python
@@ -27,7 +29,10 @@ makedepends=(
   rust-bindgen
   rust-src
   tar
+  xxhash
   xz
+  zlib
+  zstd
 )
 options=(
   !debug
@@ -247,6 +252,7 @@ _package() {
     'kmod'
   )
   optdepends=(
+    'linux-headers: headers and scripts for building modules'
     'linux-firmware: firmware images needed for some devices'
     'scx-scheds: to use sched-ext schedulers'
     'wireless-regdb: to set the correct wireless channels of your country'
@@ -254,6 +260,7 @@ _package() {
   provides=(
     "linux=${pkgver}"
     KSMBD-MODULE
+    NTSYNC-MODULE
     VIRTUALBOX-GUEST-MODULES
     WIREGUARD-MODULE
   )
@@ -291,8 +298,18 @@ _package() {
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the Linux $_basekernel kernel"
-  depends=(pahole)
-  provides=("linux-headers=$pkgver")
+  depends=(
+    binutils
+    glibc
+    libelf
+    libgcc
+    openssl
+    pahole
+    xxhash
+    zlib
+    zstd
+  )
+  provides=('LINUX-HEADERS' "linux-headers=$pkgver")
 
   cd $_srcdir
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"

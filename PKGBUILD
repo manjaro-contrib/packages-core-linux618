@@ -9,7 +9,7 @@ _commit=
 _rc=
 pkgbase=linux${_basever}
 pkgver=6.18.40
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 url="https://www.kernel.org/"
 license=(GPL-2.0-only)
@@ -91,6 +91,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0027-asus-ally-hid-test-btn-turbo.patch
         0028-asus-ally-hid-test-gamepad-mode.patch
         0029-ally-tmp-remapping.patch
+        # OrangePi Neo patches
+        0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
         # Zotac Zone patches
         0001-zotac-zone-hid-initial-impl.patch
         0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch
@@ -139,7 +141,7 @@ fi
 
 sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '3fd7a031d6add8723b67ee6641ceacceb08abd98cbb3dc09c4236630b9b0e60c'
-            '8a68c2ee6a8d6617980841317d4958ede017b10938e2c643db16a92a0d847da9'
+            '0c2643b7e73eda5e492d508bd3a17fae5941373f0eca3e2be9f3a563223fdf1c'
             '37f3222fafbe67dec3740933be37867e0c378468f71e9a6d5d6a07c2a2a568fe'
             'cacb08b2f43a9fd09053bffaacc4b7bdf8381772f26e61825fb696ded100af57'
             '17314afeea1c80984eb8d7ff2c06adedd78655bf795a6a232992ee3082b773b6'
@@ -176,6 +178,7 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             'ca69d6815b1d23a2e31e5453dadccb22c03ae9e36d5cd29dd8d8389b1437dff4'
             '9bafa4955c27d3668d3827e3fbd9aad00195f581d3b5c9f37a4059420e504a1d'
             '8e6f050f3e176e7076d0f11375be55b07689d599c37ddb406c7494ea54232247'
+            '14278fdc353e6ab5abc9c1a6b753221df12c9a0e6a8d9fec8baf81d7897a6a4b'
             'b67f25c13e946b51712b0e828ebbf8bea980d339bd6effab17869f6a62e428df'
             'f53e0ad0892ab4bd85f55b4cbb829481eba28865cf835a46c80bc237e0771981'
             '138684588665b8f651dffb4e75c265a2b81f6bd7a606f75f8fc6814a4a63d3fd'

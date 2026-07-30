@@ -92,7 +92,7 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         0028-asus-ally-hid-test-gamepad-mode.patch
         0029-ally-tmp-remapping.patch
         # OrangePi Neo patches
-        0001-iio_imu_Add_driver_for_Bosch_BMI260_IMU.patch
+        0001-iio-imu-bmi270-Match-PNP-ID-found-on-newer-OrangePi-NEO-firmware.patch
         # Zotac Zone patches
         0001-zotac-zone-hid-initial-impl.patch
         0002-xpad-gate-the-zotac-zone-PID-behind-if-IS_REACHABLE-.patch

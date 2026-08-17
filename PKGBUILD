@@ -64,8 +64,8 @@ source=("https://www.kernel.org/pub/linux/kernel/v6.x/linux-${_basekernel}.tar.x
         # Manjaro Patches
         # fixed in 6.18.45
         revert-drm-amd-display-fix-backlight-max_brightness-.patch
-        drm-amd-display-check-for-tg-ops-in-dce110_set_avmut.patch
-        drm-amd-display-add-av-mute-wait-frames-to-dce110_se.patch
+        #drm-amd-display-check-for-tg-ops-in-dce110_set_avmut.patch
+        #drm-amd-display-add-av-mute-wait-frames-to-dce110_se.patch
         # Realtek patch
         0999-patch_realtek.patch
         # ROG ALLY Patches (wip/ally-6.14-refactor)
@@ -156,8 +156,8 @@ sha256sums=('9106a4605da9e31ff17659d958782b815f9591ab308d03b0ee21aad6c7dced4b'
             '160d500954014fd3ebe75b3cac836f75423df7fbcf0390a7198701e47301245f'
             'a9803ab6cd82324c7d67711e9a7155e5642d4f9652a4ebdddb0eb0ebdbe40aa0'
             '749bfddf2891e30edfaec86485defb9a31971da61b00fb664a5975f6840b4345'
-            'c78b48e42584f66c2260ed1a180fe628aa6f83019680bd565fb87055f0159639'
-            'df75fcb6a28df05bc92ebc94d63f7029734d5b31d4f7839917a14d7d9cd348f7'
+            #'c78b48e42584f66c2260ed1a180fe628aa6f83019680bd565fb87055f0159639'
+            #'df75fcb6a28df05bc92ebc94d63f7029734d5b31d4f7839917a14d7d9cd348f7'
             '103688f3fceff664c919d94faab7a6948880710641110eaa71fe107ee06c37e9'
             'e5671d5f6fe27c072397efeedb876912d52e104488baa8cd149727ff0814e657'
             'b86329d9567c6cd7c21ba320eadfe41b1af1cea432ff3ea79197a3b1dabda622'
